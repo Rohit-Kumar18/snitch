@@ -1,0 +1,156 @@
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import ItemCard from "./ItemCard";
+import { Link } from "react-router-dom";
+import CardShimmer from "./Shimmers/CardShimmer";
+
+const SearchContentBody = () => {
+  const { searchText } = useParams();
+  const [productData, setProductData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
+
+  const options = [
+    "shirts",
+    "white shirt",
+    "trouser",
+    "linen",
+    "jeans",
+    "formal wear",
+    "overshirt",
+    "polo",
+    "checks shirt",
+    "baggy jeans",
+  ];
+
+  // const normalizeSearchText = (query) => {
+  //   const lower = query.toLowerCase().trim();
+
+  //   if (lower.includes("jean")) {
+  //     return "Jeans";
+  //   }
+  //   if (lower.includes("shirt")) {
+  //     return "Shirts";
+  //   }
+  //   if (lower.includes("tshirt") || lower.includes("t-shirt")) {
+  //     return "T-Shirts";
+  //   }
+  //   if (
+  //     lower.includes("trouser") ||
+  //     lower.includes("trousers") ||
+  //     lower.includes("pant")
+  //   ) {
+  //     return "Trousers";
+  //   }
+  //   if (lower.includes("jack")) {
+  //     return "Jackets";
+  //   }
+  //   if (lower.includes("coords") || lower.includes("co-ord")) {
+  //     return "Co-ords";
+  //   }
+  //   if (lower.includes("bag")) {
+  //     return "Bags";
+  //   }
+  //   if (lower.includes("jack")) {
+  //     return "Jackets";
+  //   }
+  //   if (lower.includes("jack")) {
+  //     return "Jackets";
+  //   }
+
+  //   return query;
+  // };
+
+  {
+    /**
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Perfumes
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Shorts
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Hoodies
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Sweatshirts
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Shoes
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Sweaters
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Sunglasses
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Jackets
+    https://mxemjhp3rt.ap-south-1.awsapprunner.com/search/trending-products?page=1&limit=6&shopify_product_type=Overshirt
+    */
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [searchText]);
+
+  const fetchData = async () => {
+    // const normalizedQuery = normalizeSearchText(searchText);
+    setLoading(true);
+    setNotFound(false);
+    try {
+      const data = await fetch(
+        // `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/plp/v2?page=1&limit=50&product_type=${normalizedQuery}`
+        `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/search?page=1&limit=50&keyword=${searchText}`
+      );
+      const json = await data.json();
+      const product = json?.data?.products;
+
+      if (!product || product.length === 0) {
+        setNotFound(true);
+      } else {
+        setProductData(product);
+      }
+    } catch (err) {
+      setNotFound(true);
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return <CardShimmer />;
+  }
+
+  if (notFound) {
+    return (
+      <div className="">
+        <div className="flex justify-center items-center">
+          <img src="https://d1ukuhxlv0lfsa.cloudfront.net/app_assets/error_screens/empty_search.png" />
+        </div>
+        <h1 className="text-center text-3xl font-bold">
+          Oops! Can't Find That
+        </h1>
+        <p className="text-center mt-3">
+          Try a new keyword or explore our trending searches for some stylish
+          inspiration
+        </p>
+        <div className="w-[60%] flex flex-wrap ml-[20%] items-center justify-center h-30 mt-2">
+          {options.map((option) => (
+            <div className="border px-2 uppercase m-3 hover:cursor-pointer hover:bg-black hover:text-white">
+              <Link to={`/search/${option}`}>{option}</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="w-full items-center justify-items-center bg-[#E7E7E7]">
+      <div className="mb-6 pt-4 pb-4 flex justify-center w-full">
+        <h1 className="font-black text-4xl uppercase">{searchText}</h1>
+      </div>
+      <div className="w-[80%] flex flex-wrap items-center justify-center mt-1">
+        {options.map((option) => (
+          <div className="border px-2 uppercase m-3 hover:cursor-pointer hover:bg-black hover:text-white">
+            <Link to={`/search/${option}`}>{option}</Link>
+          </div>
+        ))}
+      </div>
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center min-h-[700px] w-full">
+        {productData.map((item) => (
+          <ItemCard key={item.shopify_product_id} productData={item} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default SearchContentBody;
