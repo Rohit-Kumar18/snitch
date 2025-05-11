@@ -48,7 +48,7 @@ const ProductCard = () => {
 
   const fetchSimilar = async () => {
     const data = await fetch(
-      `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/similar-products?product_id=${id}&page=1&limit=100`
+      `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/similar-products?product_id=${id}&page=2&limit=150`
     );
     const json = await data.json();
     // console.log(json?.data?.products);
