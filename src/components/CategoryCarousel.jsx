@@ -25,7 +25,7 @@ const CategoryCarousel = () => {
   return category.length === 0 ? (
     <CategoryShimmer />
   ) : (
-    <div className="mt-[1%] mb-4 ">
+    <div className="mt-29 mb-4 ">
       <div className="flex overflow-x-hidden overflow-y-hidden whitespace-nowrap">
         <div className="marquee1">
           {category.map((item, index) => (

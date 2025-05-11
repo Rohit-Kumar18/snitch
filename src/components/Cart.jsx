@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   return (
-    <div className=" text-center h-screen">
+    <div className="mt-24 mb-30 text-center h-screen">
       <h1 className="pt-16 pb-6 text-3xl font-extrabold">Cart</h1>
       <div className="flex justify-center items-center my-4">
         <img src="https://d1ukuhxlv0lfsa.cloudfront.net/app_assets/error_screens/empty_bag.png" />

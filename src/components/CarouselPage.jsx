@@ -32,7 +32,7 @@ const CarouselPage = () => {
         apiUrl
       );
       const json = await data.json();
-      console.log(json);
+      // console.log(json);
 
       setProductData(json?.data?.products);
       setLoading(false);
@@ -46,7 +46,7 @@ const CarouselPage = () => {
   }
   return (
     <div className="w-full items-center justify-items-center bg-[#E7E7E7]">
-      <div className="mb-6 pt-10 pb-4 flex justify-center w-full">
+      <div className="mb-6 mt-24 pt-10 pb-4 flex justify-center w-full">
         <h1 className="font-black text-4xl uppercase">{id}</h1>
       </div>
       {/* <div className="w-[80%] flex flex-wrap items-center justify-center mt-1">

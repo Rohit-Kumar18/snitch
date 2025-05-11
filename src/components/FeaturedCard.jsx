@@ -18,7 +18,7 @@ const FeaturedCard = () => {
     );
     const json = await data.json();
     setFeaturedData(json);
-    console.log(json);
+    // console.log(json);
     setLoading(false);
   };
 
@@ -39,12 +39,9 @@ const FeaturedCard = () => {
           <h1 className="font-black text-4xl uppercase">Featured Categories</h1>
         </div>
         <div className="flex flex-wrap my-4 items-center justify-center">
-          {featuredData.map((item) => (
-            <Link to={`/featuredContent/${item?.collection_name}`}>
-              <div
-                className=" m-2 w-64 relative rounded-3xl group hover:cursor-pointer"
-                key={item?.id}
-              >
+          {featuredData.map((item, index) => (
+            <Link key={index} to={`/featuredContent/${item?.collection_name}`}>
+              <div className=" m-2 w-64 relative rounded-3xl group hover:cursor-pointer">
                 {!imagesLoaded[item?.id] && (
                   <div className=" w-64 h-[333px] rounded-3xl bg-[#eef0f5]"></div>
                 )}

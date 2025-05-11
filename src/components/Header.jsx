@@ -7,8 +7,8 @@ import Search from "./Search";
 
 const Header = () => {
   return (
-    <div className="">
-      <div className="h-24 place-content-between flex pl-[10%] bg-[#FFFFFF] border-b border-gray-300 items-center">
+    <div className="fixed top-0 left-0 w-full z-50">
+      <div className="h-24 border place-content-between flex pl-[10%] bg-[#FFFFFF] border-b border-gray-300 items-center">
         <div className="border border-transparent w-[300px] h-[76px] flex justify-center items-center mx-20 cursor-pointer">
           <Link to={"/"}>
             <img
@@ -37,7 +37,7 @@ const Header = () => {
           </ul>
         </div> */}
 
-        <div className="flex  items-center mr-10 w-[400px] place-content-between">
+        <div className="flex  items-center mr-10 w-[300px] place-content-around">
           {/* <div className="w-12 h-14 relative  cursor-pointer">
             <img
               className="w-full h-full object-center object-contain transition-transform duration-300 hover:scale-120"
@@ -45,16 +45,16 @@ const Header = () => {
             />
           </div> */}
           <div className="w-18 relative p-2 cursor-pointer">
-            <h1 className="uppercase text-2xl transition-transform duration-300 hover:text-blue-500 hover:scale-110">
+            <h1 className="uppercase text-xl transition-transform duration-300 hover:text-blue-500 hover:scale-110">
               <Link to={"/"}>Home</Link>
             </h1>
           </div>
           <div className="w-18 relative p-2 cursor-pointer">
-            <h1 className="uppercase text-2xl transition-transform duration-300 hover:text-blue-500 hover:scale-110">
+            <h1 className="uppercase text-xl transition-transform duration-300 hover:text-blue-500 hover:scale-110">
               <Link to={"/men-new-arrivals"}>New</Link>
             </h1>
           </div>
-          <div className="w-12 h-14 relative cursor-pointer">
+          <div className="w-10 h-12 relative cursor-pointer">
             <Link to={"/cart"}>
               <img
                 className="w-full h-full object-center object-contain transition-transform duration-200 hover:scale-110"
@@ -62,7 +62,7 @@ const Header = () => {
               />
             </Link>
           </div>
-          <div className="w-12 h-14 relative cursor-pointer">
+          <div className="w-10 h-12 relative cursor-pointer">
             <Link to={"/user-info"}>
               <img
                 className="w-full h-full object-center object-contain transition-transform duration-250 hover:scale-110"

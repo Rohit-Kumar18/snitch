@@ -86,7 +86,7 @@ const SearchContentBody = () => {
     try {
       const data = await fetch(
         // `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/plp/v2?page=1&limit=50&product_type=${normalizedQuery}`
-        `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/search?page=1&limit=50&keyword=${searchText}`
+        `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/search?page=1&limit=150&keyword=${searchText}`
       );
       const json = await data.json();
       const product = json?.data?.products;
@@ -110,7 +110,7 @@ const SearchContentBody = () => {
 
   if (notFound) {
     return (
-      <div className="">
+      <div className=" my-29">
         <div className="flex justify-center items-center">
           <img src="https://d1ukuhxlv0lfsa.cloudfront.net/app_assets/error_screens/empty_search.png" />
         </div>
@@ -133,8 +133,8 @@ const SearchContentBody = () => {
   }
 
   return (
-    <div className="w-full items-center justify-items-center bg-[#E7E7E7]">
-      <div className="mb-6 pt-4 pb-4 flex justify-center w-full">
+    <div className="pb-30  w-full items-center justify-items-center bg-[#E7E7E7]">
+      <div className="mt-24 mb-6 pt-8  flex justify-center w-full">
         <h1 className="font-black text-4xl uppercase">{searchText}</h1>
       </div>
       <div className="w-[80%] flex flex-wrap items-center justify-center mt-1">

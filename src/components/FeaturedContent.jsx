@@ -24,7 +24,7 @@ const FeaturedContent = () => {
       const data = await fetch(apiUrl);
       const json = await data.json();
       setProductData(json?.data?.products);
-      console.log(json?.data?.products);
+      // console.log(json?.data?.products);
       setLoading(false);
     } catch (err) {
       console.error(err);
@@ -35,7 +35,7 @@ const FeaturedContent = () => {
     return <CardShimmer />;
   }
   return (
-    <div className="w-full items-center justify-items-center bg-[#E7E7E7]">
+    <div className="w-full mt-24 items-center justify-items-center bg-[#E7E7E7]">
       <div className="mb-6 pt-10 pb-4 flex justify-center w-full">
         <h1 className="font-black text-4xl uppercase">{id}</h1>
       </div>

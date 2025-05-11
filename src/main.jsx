@@ -10,6 +10,8 @@ import NewArrivals from "./components/NewArrivals";
 import CarouselPage from "./components/CarouselPage";
 import FeaturedContent from "./components/FeaturedContent";
 import ScrollToTop from "./components/ScrollToTop";
+import Footer from "./components/Footer";
+import ProductCard from "./components/ProductCard";
 
 // Header
 // CategoryCarousel
@@ -26,6 +28,7 @@ const AppLayout = () => {
       <ScrollToTop />
       <Header />
       <Outlet />
+      <Footer />
     </div>
   );
 };
@@ -58,6 +61,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/featuredContent/:id",
         element: <FeaturedContent />,
+      },
+      {
+        path: "/product/:id",
+        element: <ProductCard />,
       },
     ],
     errorElement: <Error />,

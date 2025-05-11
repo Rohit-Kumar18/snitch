@@ -38,7 +38,7 @@ const NewArrivals = () => {
   }
   return (
     <div>
-      <div className="mb-6 pt-8 flex justify-center w-full">
+      <div className="mb-6 mt-29 pt-8 flex justify-center w-full">
         <h1 className="font-black text-4xl uppercase">New Arrivals</h1>
       </div>
       <div className="w-[80%] flex flex-wrap ml-[10%] items-center justify-center mt-1">

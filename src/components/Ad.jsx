@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import AdShimmer from "./Shimmers/AdShimmer";
+import { Link } from "react-router-dom";
 
 const Ad = () => {
   const [adData, setAdData] = useState([]);
@@ -56,11 +57,13 @@ const Ad = () => {
             key={index}
             className="w-[44%] h-[369px] flex-shrink-1 overflow-hidden"
           >
-            <div className="px-10 w-[356px] h-[58px] hover:cursor-pointer hover:shadow-2xl shadow-white border border-white absolute inset-0 m-auto bg-black flex items-center justify-center">
-              <h1 className="font-extrabold uppercase text-white tracking-widest">
-                Shop latest fashion
-              </h1>
-            </div>
+            <Link to={`/search/latest like printed t-shirts`}>
+              <div className="px-10 w-[356px] h-[58px] hover:cursor-pointer hover:shadow-2xl shadow-white border border-white absolute inset-0 m-auto bg-black flex items-center justify-center">
+                <h1 className="font-extrabold uppercase text-white tracking-widest">
+                  Shop latest fashion
+                </h1>
+              </div>
+            </Link>
             <img
               src={item?.media_url}
               alt="ad_img"

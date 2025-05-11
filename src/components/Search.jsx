@@ -36,7 +36,7 @@ const Search = () => {
     // </div>
 
     // Enter press on submit is only applicable in the form structure
-    <form onSubmit={handleSearch} className="w-[386px] h-[38px] flex">
+    <form onSubmit={handleSearch} className="w-[386px] h-[30px] flex">
       <div className="search w-[70%] h-full">
         <input
           type="text"
