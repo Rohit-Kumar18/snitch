@@ -48,14 +48,16 @@ const ProductCard = () => {
 
   const fetchSimilar = async () => {
     const data = await fetch(
-      `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/similar-products?product_id=${id}&page=2&limit=150`
+      `https://mxemjhp3rt.ap-south-1.awsapprunner.com/products/similar-products?product_id=${id}&page=1&limit=100`
     );
     const json = await data.json();
     // console.log(json?.data?.products);
     setSimilarProduct(json?.data?.products);
+    // console.log(json);
   };
 
   if (
+    similarProduct.length === 0 ||
     productDetails.length === 0 ||
     sizeInfo.length === 0 ||
     itemImage.length === 0 ||
