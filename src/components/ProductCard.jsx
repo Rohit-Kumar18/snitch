@@ -133,7 +133,7 @@ const ProductCard = () => {
                   {colorsOption.map((color, index) => (
                     <div
                       key={index}
-                      className="w-[45%] sm:w-[200px] h-[260px] rounded-2xl overflow-hidden border border-transparent hover:cursor-pointer hover:border-black hover:shadow-2xl"
+                      className="w-20 sm:w-25 h-30 sm:h-35 rounded-2xl overflow-hidden border border-transparent hover:cursor-pointer hover:border-black hover:shadow-2xl"
                     >
                       <img
                         className="w-full h-full rounded-2xl object-cover object-center"
