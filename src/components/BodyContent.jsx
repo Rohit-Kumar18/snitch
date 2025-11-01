@@ -70,16 +70,18 @@ const BodyContent = (props) => {
           </div>
         </div> */}
 
-      <div className="w-full items-center justify-items-center mx-2">
-        <div className="mb-6 mt-4  flex justify-center w-full">
-          <h1 className="font-black text-4xl uppercase">New And Popular</h1>
+      <div className="w-full px-4 sm:px-6">
+        <div className="mb-6 mt-4  flex justify-center w-full text-center">
+          <h1 className="font-black text-2xl sm:text-4xl uppercase">
+            New And Popular
+          </h1>
         </div>
 
-        <div className="p-2.5 mb-10 flex  justify-center w-full h-[45px]">
+        <div className="p-2.5 mb-10 w-full flex flex-wrap justify-center gap-2 sm:h-[45px]">
           {filterOptions.map((option) => (
             <div className="mx-1.5 " key={option.label}>
               <button
-                className={`uppercase border px-2 cursor-pointer ${
+                className={`uppercase border px-3 py-1 text-xs sm:text-sm cursor-pointer transition-colors duration-200 ${
                   activeFilter === option.filterValue
                     ? "bg-black text-white"
                     : "bg-transparent text-black"
@@ -140,7 +142,7 @@ const BodyContent = (props) => {
           </div> */}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center min-h-[700px] w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 justify-items-center min-h-[700px] w-full">
           {/* {itemsData.map((item) => (
               <ItemCard key={item.shopify_product_id} productData={item} />
             ))} */}

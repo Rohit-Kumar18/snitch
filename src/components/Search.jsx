@@ -36,11 +36,14 @@ const Search = () => {
     // </div>
 
     // Enter press on submit is only applicable in the form structure
-    <form onSubmit={handleSearch} className="w-[386px] h-[30px] flex">
-      <div className="search w-[70%] h-full">
+    <form
+      onSubmit={handleSearch}
+      className="w-full sm:mx-6 md:w-[346px] h-10 flex flex-col sm:flex-row items-center gap-2 sm:gap-0"
+    >
+      <div className="search w-full sm:w-2/3 sm:h-2/3 h-full">
         <input
           type="text"
-          className="search-box w-full h-full border p-2"
+          className="search-box w-full h-full border p-2 text-sm sm:text-base"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           placeholder="Search..."
@@ -48,7 +51,7 @@ const Search = () => {
       </div>
       <button
         type="submit"
-        className="border ml-3 px-2 hover:bg-black hover:text-white hover:cursor-pointer"
+        className="border sm:h-auto p-1.5 sm:ml-3 text-sm sm:text-sm hover:bg-black hover:text-white cursor-pointer w-full sm:w-auto"
       >
         Search
       </button>

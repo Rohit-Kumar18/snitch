@@ -50,16 +50,16 @@ const Ad = () => {
   return adData.length === 0 ? (
     <AdShimmer />
   ) : (
-    <div className="overflow-hidden  mt-4 w-[100%] ">
-      <div className="flex transition-transform duration-700 ease-in-out relative">
+    <div className="overflow-hidden mt-4 w-full h-95 lg:h-93">
+      <div className="flex h-full flex-nowrap transition-transform duration-700 ease-in-out relative">
         {getVisibleAds().map((item, index) => (
           <div
             key={index}
-            className="w-[44%] h-[369px] flex-shrink-1 overflow-hidden"
+            className="w-full sm:w-1/2 lg:w-[44%] h-auto lg:h-[369px] flex-shrink-0 lg:flex-shrink-1 overflow-hidden"
           >
             <Link to={`/search/latest like printed t-shirts`}>
-              <div className="px-10 w-[356px] h-[58px] hover:cursor-pointer hover:shadow-2xl shadow-white border border-white absolute inset-0 m-auto bg-black flex items-center justify-center">
-                <h1 className="font-extrabold uppercase text-white tracking-widest">
+              <div className="px-4 sm:px-6 md:px-10 w-[70%] max-w-md h-12 sm:h-16 hover:cursor-pointer hover:shadow-2xl shadow-white border border-white absolute inset-0 m-auto bg-black flex items-center justify-center">
+                <h1 className="text-sm sm:text-base font-medium sm:font-extrabold uppercase text-white tracking-widest text-center">
                   Shop latest fashion
                 </h1>
               </div>
@@ -67,7 +67,7 @@ const Ad = () => {
             <img
               src={item?.media_url}
               alt="ad_img"
-              className="w-full h-full object-cover object-center hover:cursor-pointer"
+              className="w-full h-full object-cover object-center cursor-pointer aspect-video"
             />
           </div>
         ))}

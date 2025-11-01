@@ -33,21 +33,23 @@ const FeaturedCard = () => {
   return loading === true ? (
     <FeaturedShimmer />
   ) : (
-    <div className="flex justify-center items-center mt-4 mb-4 ">
-      <div className="w-[90%]">
-        <div className="flex justify-center items-center mt-4">
-          <h1 className="font-black text-4xl uppercase">Featured Categories</h1>
+    <div className="flex justify-center items-center mt-4 mb-4 px-4 sm:px-0">
+      <div className="w-full sm:w-[90%]">
+        <div className="flex justify-center items-center mt-4 text-center">
+          <h1 className="font-black text-2xl sm:text-4xl uppercase">
+            Featured Categories
+          </h1>
         </div>
-        <div className="flex flex-wrap my-4 items-center justify-center">
+        <div className="flex flex-wrap my-4 items-center justify-center gap-4">
           {featuredData.map((item, index) => (
             <Link key={index} to={`/featuredContent/${item?.collection_name}`}>
-              <div className=" m-2 w-64 relative rounded-3xl group hover:cursor-pointer">
+              <div className=" w-40 sm:w-64 relative rounded-3xl group cursor-pointer">
                 {!imagesLoaded[item?.id] && (
-                  <div className=" w-64 h-[333px] rounded-3xl bg-[#eef0f5]"></div>
+                  <div className="w-full h-48 sm:h-[333px] rounded-3xl bg-[#eef0f5]"></div>
                 )}
 
                 <img
-                  className={`w-full object-center rounded-3xl object-cover transition-transform duration-300 group-hover:scale-90 ${
+                  className={`w-full h-48 sm:h-[333px] object-cover object-center rounded-3xl transition-transform duration-300 group-hover:scale-90 ${
                     !imagesLoaded[item?.id] ? "hidden" : ""
                   }}`}
                   src={item?.media_url}
@@ -56,7 +58,7 @@ const FeaturedCard = () => {
                 />
 
                 {imagesLoaded[item?.id] && (
-                  <p className="absolute inset-0 flex justify-center mt-[68%] text-2xl font-black text-white">
+                  <p className="absolute inset-0 flex justify-center items-end pb-4 text-sm sm:text-2xl font-black text-white text-center">
                     {item?.name}
                   </p>
                 )}

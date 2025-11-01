@@ -21,7 +21,7 @@ const Cart = () => {
       <Link to={"/"}>
         <div className="flex justify-center items-center mt-10">
           <div className="bg-black text-white h-14 sm:h-16 w-full sm:w-1/3 max-w-xs flex justify-center items-center hover:cursor-pointer">
-            <h1 className="px-4 uppercase text-lg sm:text-2xl font-bold">
+            <h1 className="px-4 sm:py-2 uppercase text-lg sm:text-2xl font-bold">
               Start Shopping
             </h1>
           </div>

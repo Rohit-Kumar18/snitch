@@ -7,18 +7,18 @@ import Search from "./Search";
 
 const Header = () => {
   return (
-    <div className="fixed top-0 left-0 w-full z-50">
-      <div className="h-20 sm:h-24 items-center justify-between flex flex-wrap px-4 sm:px-10 bg-[#FFFFFF] border border-b border-gray-300 ">
-        <div className="w-full sm:w-auto py-2 sm:py-0 flex justify-center sm:justify-start cursor-pointer">
+    <div className="fixed top-0 left-0 w-full sm:p-auto z-50">
+      <div className="h-20 sm:h-24 items-center justify-between flex flex-wrap sm:px-10 bg-[#FFFFFF] sm:border sm:border-b border-gray-300 ">
+        <div className="w-full sm:w-auto px-4  py-2 sm:py-0 flex justify-center sm:justify-start cursor-pointer">
           <Link to={"/"}>
             <img
-              className="w-48 sm:w-[270px] object-cover object-center"
+              className="w-48 sm:w-55 md:w-[270px] object-cover object-center"
               src={LOGO_URL}
             />
           </Link>
         </div>
 
-        <div className="hidden sm:block flex-grow mx-4">
+        <div className="hidden lg:block flex-grow ml-4 md:mr-0">
           <Search />
         </div>
 
@@ -39,7 +39,7 @@ const Header = () => {
           </ul>
         </div> */}
 
-        <div className="w-full sm:w-auto flex justify-center sm:justify-end items-center gap-4 mt-2 sm:mt-0 relative cursor-pointer">
+        <div className="w-full sm:w-auto flex justify-center sm:justify-end items-center gap-4 mt-2 sm:mt-0 relative cursor-pointer bg-white bg-gradient-to-r sm:border-none border border-t border-gray-300">
           <Link to={"/"}>
             <h1 className="uppercase sm:text-xl text-sm p-2 hover:text-blue-500 transition-transform duration-300 hover:scale-110">
               Home
