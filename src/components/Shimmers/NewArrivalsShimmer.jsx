@@ -1,4 +1,10 @@
+import { useEffect } from "react";
 const NewArrivalsShimmer = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50); // 100ms delay
+  }, []);
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 justify-items-center min-h-[700px] w-full">
       {Array.from({ length: 24 }).map((_, index) => (

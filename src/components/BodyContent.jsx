@@ -1,17 +1,24 @@
 import ItemCard from "./ItemCard";
 import BodyContentShimmer from "./Shimmers/BodyContentShimmer";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const BodyContent = (props) => {
   const { itemsData, setFilterValue } = props;
   const [originalData, setOriginalData] = useState([]);
   const [cardData, setCardData] = useState([]);
   const [activeFilter, setActiveFilter] = useState(null);
+  const sectionRef = useRef(null);
 
   useEffect(() => {
     setOriginalData(itemsData);
     setCardData(itemsData);
   }, [itemsData]);
+
+  useEffect(() => {
+    if (sectionRef?.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [cardData]);
 
   const handleFilterClick = (filterValue) => {
     setActiveFilter(filterValue);
@@ -24,11 +31,11 @@ const BodyContent = (props) => {
     { label: "T-Shirts", filterValue: "T-Shirts" },
     { label: "Trousers", filterValue: "Trousers" },
     { label: "Jeans", filterValue: "Jeans" },
-    // { label: "Sweatshirts", filterValue: "Sweatshirts" },
+    // { label: "Cargo", filterValue: "Cargo" },
     { label: "Jackets", filterValue: "Jackets" },
-    // { label: "Sweaters", filterValue: "Sweaters" },
-    { label: "Co-ords", filterValue: "Co-ords" },
-    { label: "Bags", filterValue: "Bags" },
+    { label: "Sweaters", filterValue: "Sweaters" },
+    // { label: "Co-ords", filterValue: "Co-ords" },
+    // { label: "Bags", filterValue: "Bags" },
   ];
 
   {
@@ -61,7 +68,7 @@ const BodyContent = (props) => {
       filterOptions={filterOptions}
     />
   ) : (
-    <div className="pt-10 flex justify-center bg-[#E7E7E7]">
+    <div ref={sectionRef} className="pt-10 flex justify-center bg-[#E7E7E7]">
       {/* <div className="bg-white w-[22%] h-[900px] ml-[4%] mr-[2.5%] mt-20">
           <div className="p-2.5">
             <h1>Filters</h1>

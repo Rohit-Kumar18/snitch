@@ -1,7 +1,14 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const CategoryCarouselCard = (props) => {
   const { categoryData } = props;
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50); // 100ms delay
+  }, []);
+
   return (
     <div className="m-auto p-2 w-28 sm:w-32">
       <div className="w-full aspect-square rounded-xl group relative ">

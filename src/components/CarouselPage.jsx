@@ -12,6 +12,12 @@ const CarouselPage = () => {
     fetchData();
   }, [id]);
 
+  useEffect(() => {
+    if (!loading) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [loading]);
+
   const fetchData = async () => {
     try {
       let apiUrl = "";

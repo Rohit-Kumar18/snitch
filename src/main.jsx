@@ -25,7 +25,7 @@ import ProductCard from "./components/ProductCard";
 const AppLayout = () => {
   return (
     <div>
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Header />
       <Outlet />
       <Footer />

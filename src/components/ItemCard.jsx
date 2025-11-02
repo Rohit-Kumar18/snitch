@@ -1,10 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ItemCard = (props) => {
   const { productData } = props;
 
   // console.log(productData);
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     window.scrollTo({ top: 0, behavior: "smooth" });
+  //   }, 50); // 100ms delay
+  // }, []);
 
   const [imageLoading, setImageLoading] = useState({});
 

@@ -26,9 +26,18 @@ const CategoryCarousel = () => {
     <CategoryShimmer />
   ) : (
     <div className="mt-29 mb-4 ">
-      <div className="flex overflow-x-hidden overflow-y-hidden whitespace-nowrap">
+      <div className="flex overflow-x-auto overflow-y-hidden whitespace-nowrap scroll-smooth">
         <div className="marquee1">
-          {category.map((item, index) => (
+          {[
+            ...category,
+            ...category,
+            ...category,
+            ...category,
+            ...category,
+            ...category,
+            ...category,
+            ...category,
+          ].map((item, index) => (
             <CategoryCarouselCard key={index} categoryData={item} />
           ))}
         </div>

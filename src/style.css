@@ -27,7 +27,12 @@
 .marquee1 {
   display: flex;
   width: fit-content;
-  animation: marquee 150s linear infinite;
+  animation: marquee 350s linear infinite;
+  will-change: transform;
+}
+
+.marquee1:hover {
+  animation-play-state: paused;
 }
 
 @keyframes marquee1 {

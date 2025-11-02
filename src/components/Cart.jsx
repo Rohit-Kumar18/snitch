@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
-
+import { useEffect } from "react";
 const Cart = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 50); // 100ms delay
+  }, []);
   return (
     <div className="mt-24 mb-30 text-center min-h-screen px-4">
       <h1 className="pt-16 pb-6 text-2xl sm:text-3xl font-extrabold">Cart</h1>
