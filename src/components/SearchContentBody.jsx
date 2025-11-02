@@ -79,6 +79,12 @@ const SearchContentBody = () => {
     fetchData();
   }, [searchText]);
 
+  useEffect(() => {
+    if (!loading) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [loading]);
+
   const fetchData = async () => {
     // const normalizedQuery = normalizeSearchText(searchText);
     setLoading(true);

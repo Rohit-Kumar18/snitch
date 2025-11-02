@@ -38,7 +38,7 @@ const ItemCard = (props) => {
             <h3 className="text-center font-sans font-semibold text-sm sm:text-base">
               {productData?.title}
             </h3>
-            <h4 className="text-center font-sans font-semibold text-sm sm:text-base">
+            <h4 className="text-gray-600 text-center font-sans font-semibold text-sm sm:text-base">
               ₹{productData?.selling_price}
             </h4>
           </div>

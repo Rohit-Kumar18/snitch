@@ -13,3 +13,4 @@ Remaining :
 - 4. Cart Addition functionality
 - 5. Account SignUp/Login
 - 6. Payment Option (Razorpay Integration)
+- 7. ItemsCard Functionalities and ToggleBar

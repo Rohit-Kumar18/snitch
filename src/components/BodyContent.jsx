@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 
 const BodyContent = (props) => {
   const { itemsData, setFilterValue } = props;
-
   const [originalData, setOriginalData] = useState([]);
   const [cardData, setCardData] = useState([]);
-
   const [activeFilter, setActiveFilter] = useState(null);
 
   useEffect(() => {
