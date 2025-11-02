@@ -44,12 +44,14 @@ const NewArrivals = () => {
             New Arrivals
           </h1>
         </div>
-        <div className="p-2.5 mb-5 w-full flex flex-wrap justify-center items-center mt-1">
+        <div className="p-2.5 mb-10 w-full flex flex-wrap justify-center gap-2">
           {filters.map((filter) => (
-            <div className="border px-2 uppercase m-3 py-1 text-xs sm:text-sm cursor-pointer transition-colors duration-200 hover:bg-black hover:text-white">
-              <Link to={`/search/${filter?.attribute_label}`}>
-                {filter?.attribute_label}
-              </Link>
+            <div className="mx-1.5">
+              <button className="border px-3 uppercase py-1 text-xs sm:text-sm cursor-pointer transition-colors duration-200 hover:bg-black hover:text-white">
+                <Link to={`/search/${filter?.attribute_label}`}>
+                  {filter?.attribute_label}
+                </Link>
+              </button>
             </div>
           ))}
         </div>
