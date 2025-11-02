@@ -63,7 +63,7 @@ const BodyContent = (props) => {
       filterOptions={filterOptions}
     />
   ) : (
-    <div className="pt-10 flex justify-center bg-[#E7E7E7] ">
+    <div className="pt-10 flex justify-center bg-[#E7E7E7]">
       {/* <div className="bg-white w-[22%] h-[900px] ml-[4%] mr-[2.5%] mt-20">
           <div className="p-2.5">
             <h1>Filters</h1>
@@ -71,7 +71,7 @@ const BodyContent = (props) => {
         </div> */}
 
       <div className="w-full px-4 sm:px-6">
-        <div className="mb-6 mt-4  flex justify-center w-full text-center">
+        <div className="mb-6 mt-4 flex justify-center w-full text-center">
           <h1 className="font-black text-2xl sm:text-4xl uppercase">
             New And Popular
           </h1>
