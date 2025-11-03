@@ -12,6 +12,7 @@ import FeaturedContent from "./components/FeaturedContent";
 import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import ProductCard from "./components/ProductCard";
+import MobileNav from "./components/MobileNav";
 
 // Header
 // CategoryCarousel
@@ -29,6 +30,7 @@ const AppLayout = () => {
       <Header />
       <Outlet />
       <Footer />
+      <MobileNav />
     </div>
   );
 };

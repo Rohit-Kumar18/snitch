@@ -8,7 +8,7 @@ import Search from "./Search";
 const Header = () => {
   return (
     <div className="fixed top-0 left-0 w-full sm:p-auto z-50">
-      <div className="h-20 sm:h-24 items-center justify-between flex flex-wrap sm:px-10 bg-[#FFFFFF] sm:border sm:border-b border-gray-300 ">
+      <div className="h-20 sm:h-24 items-center justify-between flex flex-wrap sm:px-10 bg-[#FFFFFF] sm:border border-b border-gray-300 ">
         <div className="w-full sm:w-auto px-4  py-2 sm:py-0 flex justify-center sm:justify-start cursor-pointer">
           <Link to={"/"}>
             <img
@@ -39,7 +39,8 @@ const Header = () => {
           </ul>
         </div> */}
 
-        <div className="w-full sm:w-auto flex justify-center sm:justify-end items-center gap-4 mt-2 sm:mt-0 relative cursor-pointer bg-white bg-gradient-to-r sm:border-none border border-t border-gray-300">
+        <div className="hidden w-full sm:w-auto sm:flex justify-center sm:justify-end items-center gap-4 mt-2 sm:mt-0 relative cursor-pointer bg-white bg-gradient-to-r sm:border-none border border-t border-gray-300">
+          {/*  Earlier when i was using the icons on top then the "hidden" was not written and instead of "sm:flex" we have "flex"  */}
           <Link to={"/"}>
             <h1 className="uppercase sm:text-xl text-sm p-2 hover:text-blue-500 transition-transform duration-300 hover:scale-110">
               Home

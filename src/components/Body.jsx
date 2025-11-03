@@ -29,7 +29,7 @@ const Body = () => {
   };
 
   return (
-    <div className="w-[100%]">
+    <div className="w-full">
       <MessageBar />
       <FeaturedCard />
       <ShopSize />
