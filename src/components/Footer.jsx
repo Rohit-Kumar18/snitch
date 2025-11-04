@@ -103,13 +103,13 @@ const Footer = () => {
   return (
     <div className="w-full h-full bg-[#E7E7E7] ">
       <div className="pb-20">
-        <div className="mb-6 h-[106px] flex justify-center items-center w-full border-b-3 border-t-4">
-          <h1 className="font-black text-4xl uppercase">
+        <div className="my-6 h-[106px] items-center flex justify-center text-center w-full border-b-3 border-t-3">
+          <h1 className="font-black text-2xl sm:text-4xl uppercase">
             More About Shopping at Snitch
           </h1>
         </div>
         <div className="h-14 mt-15 mb-6 flex justify-center items-center">
-          <h2 className="uppercase font-black text-2xl underline">
+          <h2 className="uppercase font-black text-xl sm:text-2xl underline">
             TOP CATEGORIES
           </h2>
         </div>
@@ -125,7 +125,7 @@ const Footer = () => {
         </div>
 
         <div className="h-14 flex mt-15 mb-6 justify-center items-center">
-          <h2 className="uppercase font-black text-2xl underline">
+          <h2 className="uppercase font-black text-xl sm:text-2xl underline">
             Popular Searches
           </h2>
         </div>

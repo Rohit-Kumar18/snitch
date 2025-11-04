@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import CART_IMG from "../images/cart.png";
 import ADMIN_IMG from "../images/admin.png";
-import { HiHome, HiSparkles } from "react-icons/hi";
+import { HiHome, HiSparkles, HiOutlineSearch } from "react-icons/hi";
 import useCartStore from "../utils/cartStore";
 
 const MobileNav = () => {
@@ -20,6 +20,14 @@ const MobileNav = () => {
             }`}
           />
         </Link>
+
+        <Link
+          to="/search"
+          className="flex flex-col items-center text-xs uppercase"
+        >
+          <HiOutlineSearch className={`text-2xl `} />
+        </Link>
+
         <Link
           to="/men-new-arrivals"
           className="flex flex-col items-center text-xs uppercase"
@@ -32,6 +40,7 @@ const MobileNav = () => {
           />
           New
         </Link>
+
         <Link
           to="/cart"
           className={`relative flex flex-col items-center text-xs uppercase`}

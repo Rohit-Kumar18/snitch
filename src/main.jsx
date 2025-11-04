@@ -13,6 +13,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import Footer from "./components/Footer";
 import ProductCard from "./components/ProductCard";
 import MobileNav from "./components/MobileNav";
+import SearchComponent from "./components/SearchComponent";
 
 // Header
 // CategoryCarousel
@@ -47,6 +48,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+
+      {
+        path: "/search",
+        element: <SearchComponent />,
       },
       {
         path: "/search/:searchText",
