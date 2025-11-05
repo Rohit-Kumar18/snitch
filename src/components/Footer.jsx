@@ -101,7 +101,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="w-full h-full bg-[#E7E7E7] ">
+    <div className="hidden sm:block w-full h-full bg-[#E7E7E7] ">
       <div className="pb-20">
         <div className="my-6 h-[106px] items-center flex justify-center text-center w-full border-b-3 border-t-3">
           <h1 className="font-black text-2xl sm:text-4xl uppercase">

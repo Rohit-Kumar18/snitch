@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import { Link } from "react-router-dom";
+import { HiOutlineSearch } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {
@@ -38,22 +38,18 @@ const Search = () => {
     // Enter press on submit is only applicable in the form structure
     <form
       onSubmit={handleSearch}
-      className="w-full sm:mx-6 md:w-[346px] h-10 flex flex-col sm:flex-row items-center gap-2 sm:gap-0"
+      className="border relative max-w-[346px] mx-auto my-4 h-10"
     >
-      <div className="search w-full sm:w-2/3 sm:h-2/3 h-full">
-        <input
-          type="text"
-          className="search-box w-full h-full border p-2 text-sm sm:text-base"
-          value={searchText}
-          onChange={(e) => setSearchText(e.target.value)}
-          placeholder="Search..."
-        />
-      </div>
-      <button
-        type="submit"
-        className="border sm:h-auto p-1.5 sm:ml-3 text-sm sm:text-sm hover:bg-black hover:text-white cursor-pointer w-full sm:w-auto"
-      >
-        Search
+      <input
+        type="text"
+        className="search-box w-full h-full p-2 text-sm sm:text-base"
+        value={searchText}
+        onChange={(e) => setSearchText(e.target.value)}
+        placeholder="Search..."
+      />
+
+      <button type="submit" className="absolute top-2 right-3 cursor-pointer">
+        <HiOutlineSearch className="text-xl" />
       </button>
     </form>
   );

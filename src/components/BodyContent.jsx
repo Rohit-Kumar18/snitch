@@ -14,11 +14,11 @@ const BodyContent = (props) => {
     setCardData(itemsData);
   }, [itemsData]);
 
-  useEffect(() => {
-    if (sectionRef?.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }, [cardData]);
+  // useEffect(() => {
+  //   if (sectionRef?.current) {
+  //     sectionRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // }, [cardData]);
 
   const handleFilterClick = (filterValue) => {
     setActiveFilter(filterValue);
@@ -68,7 +68,7 @@ const BodyContent = (props) => {
       filterOptions={filterOptions}
     />
   ) : (
-    <div ref={sectionRef} className="pt-10 flex justify-center bg-[#E7E7E7]">
+    <div ref={sectionRef} className="py-10 flex justify-center bg-[#E7E7E7]">
       {/* <div className="bg-white w-[22%] h-[900px] ml-[4%] mr-[2.5%] mt-20">
           <div className="p-2.5">
             <h1>Filters</h1>
@@ -147,7 +147,7 @@ const BodyContent = (props) => {
           </div> */}
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 justify-items-center min-h-[700px] w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 pb-10 justify-items-center min-h-[700px] w-full">
           {/* {itemsData.map((item) => (
               <ItemCard key={item.shopify_product_id} productData={item} />
             ))} */}

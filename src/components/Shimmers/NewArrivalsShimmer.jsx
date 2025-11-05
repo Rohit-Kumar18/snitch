@@ -6,7 +6,7 @@ const NewArrivalsShimmer = () => {
     }, 50); // 100ms delay
   }, []);
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 justify-items-center min-h-[700px] w-full">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 justify-items-center min-h-[700px] w-full pb-10">
       {Array.from({ length: 24 }).map((_, index) => (
         <div
           key={index}

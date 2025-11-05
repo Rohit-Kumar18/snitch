@@ -116,7 +116,7 @@ const SearchContentBody = () => {
 
   if (notFound) {
     return (
-      <div className=" my-29">
+      <div className="pb-25 my-29">
         <div className="flex justify-center items-center">
           <img src="https://d1ukuhxlv0lfsa.cloudfront.net/app_assets/error_screens/empty_search.png" />
         </div>

@@ -42,7 +42,7 @@ const NewArrivals = () => {
   }, [loading]);
 
   return (
-    <div className="pt-10 flex justify-center">
+    <div className="py-10 flex justify-center">
       <div className="w-full px-4 sm:px-6 bg-[#E7E7E7]">
         <div className="mb-6 mt-19 pt-8 flex justify-center w-full text-center">
           <h1 className="font-black text-2xl sm:text-4xl uppercase">
@@ -69,7 +69,7 @@ const NewArrivals = () => {
         {loading === true ? (
           <NewArrivalsShimmer />
         ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 justify-items-center min-h-[700px] w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-4 gap-y-2 pb-10 justify-items-center min-h-[700px] w-full">
             {cardData.map((item) => (
               <ItemCard key={item.shopify_product_id} productData={item} />
             ))}
