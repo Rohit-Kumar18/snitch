@@ -49,6 +49,7 @@ const MobileNav = () => {
         </Modal>
 
         <Link
+          onClick={() => setActiveIcon("new")}
           to="/men-new-arrivals"
           className="flex flex-col items-center text-xs uppercase"
         >
