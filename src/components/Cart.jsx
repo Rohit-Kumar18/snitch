@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import useCartStore from "../utils/cartStore";
 import { HiOutlineTrash } from "react-icons/hi";
-import { set } from "lodash";
 
 const Cart = () => {
   const [coupon, setCoupon] = useState("app10");
