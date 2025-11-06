@@ -25,39 +25,40 @@ const ItemCard = (props) => {
 
   return (
     <div className="w-full max-w-[200px] sm:max-w-[220px] md:max-w-[250px] lg:max-w-[280px] xl:max-w-[334px] mb-6 bg-[#E7E7E7] border border-transparent cursor-pointer hover:shadow-sm shadow-gray-500 rounded-2xl">
-      <Link to={`/product/${productData?.shopify_product_id}`}>
-        <div
-          className="group relative rounded-t-xl overflow-hidden hover:rounded-t-2xl"
-          key={productData?.shopify_product_id}
-        >
-          <div className="relative">
-            {quantity > 0 && (
-              <div className="absolute top-2 left-2 bg-white rounded-full shadow px-2 py-1 flex items-center gap-2 z-10">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    removeFromCart(productData.shopify_product_id);
-                  }}
-                  className="text-sm font-bold px-1"
-                >
-                  −
-                </button>
-                <span className="text-sm font-semibold">{quantity}</span>
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                    addToCart(productData);
-                  }}
-                  className="text-sm font-bold px-1"
-                >
-                  +
-                </button>
-              </div>
-            )}
+      <div
+        className="group relative rounded-t-xl overflow-hidden hover:rounded-t-2xl"
+        key={productData?.shopify_product_id}
+      >
+        <div className="relative">
+          {quantity > 0 && (
+            <div className="absolute top-2 left-2 bg-white rounded-full shadow px-2 py-1 flex items-center gap-2 z-10">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  removeFromCart(productData.shopify_product_id);
+                }}
+                className="text-sm font-bold px-1"
+              >
+                −
+              </button>
+              <span className="text-sm font-semibold">{quantity}</span>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  addToCart(productData);
+                }}
+                className="text-sm font-bold px-1"
+              >
+                +
+              </button>
+            </div>
+          )}
 
-            {!imageLoading[productData?.shopify_product_id] && (
-              <div className="w-full max-h-60 sm:max-h-78 md:max-h-96 lg:h-100 xl:max-h-120 bg-[#D4D4D4] rounded-xl"></div>
-            )}
+          {!imageLoading[productData?.shopify_product_id] && (
+            <div className="w-full max-h-60 sm:max-h-78 md:max-h-96 lg:h-100 xl:max-h-120 bg-[#D4D4D4] rounded-xl"></div>
+          )}
+
+          <Link to={`/product/${productData?.shopify_product_id}`}>
             <img
               className={`w-full max-h-60 sm:max-h-78 md:h-96 lg:h-100 xl:max-h-120 object-cover object-center transition-transform duration-300 group-hover:scale-110 ${
                 !imageLoading[productData?.shopify_product_id] ? "hidden" : ""
@@ -66,9 +67,20 @@ const ItemCard = (props) => {
               alt="item-logo"
               onLoad={() => handleImageLoad(productData?.shopify_product_id)}
             />
-          </div>
+          </Link>
+
+          {imageLoading[productData?.shopify_product_id] && (
+            <div className="absolute z-10 bottom-3 left-1 right-1 flex justify-center">
+              <button
+                onClick={handleAddToCart}
+                className="bg-blue-500 text-white text-xs sm:text-sm uppercase px-4 py-1 rounded-2xl hover:cursor-pointer hover:bg-blue-800 transition-colors"
+              >
+                Add to Bag
+              </button>
+            </div>
+          )}
         </div>
-      </Link>
+      </div>
 
       <Link to={`/product/${productData?.shopify_product_id}`}>
         {imageLoading[productData?.shopify_product_id] && (
@@ -82,17 +94,6 @@ const ItemCard = (props) => {
           </div>
         )}
       </Link>
-
-      {imageLoading[productData?.shopify_product_id] && (
-        <div className="mt-2 mb-4 flex justify-center">
-          <button
-            onClick={handleAddToCart}
-            className="bg-black text-white text-xs sm:text-sm uppercase px-4 py-1 rounded-2xl hover:cursor-pointer hover:bg-blue-800 transition-colors"
-          >
-            Add to Bag
-          </button>
-        </div>
-      )}
     </div>
   );
 };

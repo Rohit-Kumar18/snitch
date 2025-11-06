@@ -116,20 +116,23 @@ const SearchContentBody = () => {
 
   if (notFound) {
     return (
-      <div className="pb-25 my-29">
-        <div className="flex justify-center items-center">
-          <img src="https://d1ukuhxlv0lfsa.cloudfront.net/app_assets/error_screens/empty_search.png" />
+      <div className="pb-25 my-20 sm:my-29 px-4">
+        <div className="flex justify-center">
+          <img
+            className="object-cover w-40 h-60"
+            src="https://d1ukuhxlv0lfsa.cloudfront.net/app_assets/error_screens/empty_search.png"
+          />
         </div>
-        <h1 className="text-center text-3xl font-bold">
+        <h1 className="text-center text-xl lg:text-3xl font-bold">
           Oops! Can't Find That
         </h1>
-        <p className="text-center mt-3">
+        <p className="text-center mt-3 sm:mt-6 text-sm sm:text-base md:text-lg">
           Try a new keyword or explore our trending searches for some stylish
           inspiration
         </p>
-        <div className="w-[60%] flex flex-wrap ml-[20%] items-center justify-center h-30 mt-2">
+        <div className="flex flex-wrap items-center justify-center h-30 mt-2">
           {options.map((option) => (
-            <div className="border px-2 uppercase m-3 hover:cursor-pointer hover:bg-black hover:text-white">
+            <div className="border m-2 px-2 py-1 uppercase text-sm sm:text-lg gap-2 hover:cursor-pointer hover:bg-black hover:text-white">
               <Link to={`/search/${option}`}>{option}</Link>
             </div>
           ))}
