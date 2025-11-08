@@ -50,8 +50,8 @@ const Cart = () => {
         Your Shopping Bag <span className="text-blue-600">({cart.length})</span>
       </h1>
 
-      <div className="lg:flex lg:justify-center lg:gap-5">
-        <div className="grid grid-cols-1 border border-gray-300 w-[600px]">
+      <div className="lg:flex lg:justify-center lg:gap-5 px-4 sm:px-0">
+        <div className="grid grid-cols-1 border border-gray-300  sm:w-[600px]">
           {cart.map((item) => (
             <div key={item.shopify_product_id} className=" p-1 flex w-full">
               <div className=" w-50 h-55">
@@ -63,7 +63,9 @@ const Cart = () => {
               </div>
               <div className="flex relative flex-wrap px-4 h-55 w-full">
                 <div className=" w-full">
-                  <h1 className="text-lg font-normal">{item.title}</h1>
+                  <h1 className="text-sm sm:text-lg font-normal">
+                    {item.title}
+                  </h1>
                   <div className="flex mb-1">
                     <h2 className="mr-2 text-gray-600 text-sm sm:text-base">
                       ₹{item.selling_price} × {item.quantity}
@@ -71,7 +73,7 @@ const Cart = () => {
                   </div>
 
                   <div className="flex flex-col items-center justify-center mt-4">
-                    <div className="text-lg text-gray-500 mb-2">
+                    <div className="text-sm sm:text-lg text-gray-500 mb-2">
                       Total: ₹{item.selling_price * item.quantity}
                     </div>
                     <div className="flex items-center justify-center mt-4 gap-4">

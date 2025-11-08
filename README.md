@@ -8,9 +8,4 @@ Live Demo Link: https://snitch-project.vercel.app/
 Remaining :
 
 - 1. Infinite scrolling
-- 2. Footer section
-- 3. Search like "https://projects.100xdevs.com/"
-- 4. Cart Addition functionality
-- 5. Account SignUp/Login
-- 6. Payment Option (Razorpay Integration)
-- 7. ItemsCard Functionalities and ToggleBar
+- 2. Payment Option (Razorpay Integration)
