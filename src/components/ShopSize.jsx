@@ -10,7 +10,8 @@ const ShopSize = () => {
         <div className="w-full flex justify-center ">
           <img
             className="w-full sm:w-[90%] max-w-[1200px] h-auto  object-cover object-center"
-            src="https://cdn.shopify.com/s/files/1/0420/7073/7058/files/lucky_size_banner_home.jpg?v=1745244500"
+            // src="https://cdn.shopify.com/s/files/1/0420/7073/7058/files/lucky_size_banner_home.jpg?v=1745244500"
+            src="https://cdn.shopify.com/s/files/1/0420/7073/7058/files/Frame_427319299_1.jpg?v=1766569943"
             alt="SizeBanner"
           />
         </div>
