@@ -7,7 +7,7 @@ const ShopSize = () => {
             SHOP YOUR SIZE
           </h1>
         </div>
-        <div className="w-full flex justify-center ">
+        <div className="w-full flex justify-center bg-[#061616]">
           <img
             className="w-full sm:w-[90%] max-w-[1200px] h-auto  object-cover object-center"
             // src="https://cdn.shopify.com/s/files/1/0420/7073/7058/files/lucky_size_banner_home.jpg?v=1745244500"
