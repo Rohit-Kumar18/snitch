@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HiOutlineSearch } from "react-icons/hi";
 import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const [searchText, setSearchText] = useState("");
   const navigate = useNavigate();
+  const inputRef = useRef();
 
   const handleSearch = () => {
     if (!searchText.trim()) {
@@ -13,6 +14,10 @@ const Search = () => {
     const encodedSearch = encodeURIComponent(searchText.trim());
     navigate(`/search/${encodedSearch}`);
   };
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   return (
     // <div className=" w-[386px] h-[38px] flex">
@@ -41,6 +46,7 @@ const Search = () => {
       className="border relative max-w-[346px] mx-auto my-4 h-10"
     >
       <input
+        ref={inputRef}
         type="text"
         className="search-box w-full h-full p-2 text-sm sm:text-base"
         value={searchText}
